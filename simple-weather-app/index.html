@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <title>Current Weather</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="main-left-container">
+            <div id="heading">
+                <h1 id="main-header">Current Weather</h1>
+                <h4>Simple yet elegant!</h3>
+            </div>
+            <div id="search">
+                <input type="text" name="search-box" placeholder="Type in your City" id="search-input">
+                <input type="submit" name="submit-btn" value="Search" id="search-btn">
+            </div>
+        </div>
+        <div class="main-right-container">
+            <div id="location">
+                location
+            </div>
+            <div id="weather-details-container">
+                <div class="details">
+                    <h3>Temperature</h3>
+                    <p id="temperature"></p>
+                </div>
+                <div class="details">
+                    <h3>Humidity</h3>
+                    <p id="humidity"></p>
+                </div>
+                <div class="details">
+                    <h3>Wind</h3>
+                    <p id="wind"></p>
+                </div>
+                <div class="details">
+                    <h3>Pressure</h3>
+                    <p id="pressure"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+    /* nema nikakvog preljevanja tj. nema skrola */
+    overflow: hidden;
+    /* ako koristimo flexbox onda umjesto width koristimo flex-basis */
+    flex-basis: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to right, #1d2b64, #f8cdda);
+}
+
+.main-left-container,
+.main-right-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centriranje u sami centar = justify-content: center; + align-items: center; */
+    justify-content: center;
+    /* align-items aligna po trenutnoj osi, a to je y-os jer je flex-direction postavljen na column */
+    align-items: center;
+}
+
+#heading,
+#search {
+    width: 60%;
+    height: 30%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;  
+    flex-direction: column;
+}
+
+#heading {
+    margin-bottom: 10em;
+}
+
+#search-btn {
+    margin-top: 1em;
+    height: 60px;
+    width: 200px;
+    /* dobar nacin za definirati radius rubova bordera */
+    border-radius: 15%/50%;
+    font-size: 40px;
+    font-family: fantasy;
+    color: #791e33;
+    border: 2px solid #791e33;
+    cursor: pointer;
+}
+
+#search-btn:hover {
+    background-color: #df899d;
+}
+
+#search-btn:active {
+    background-color: #c04c67;
+}
+
+/* mice plavi pravokutni border oko buttona kad se na njega stisne tj. KAD DODE U FOKUS*/
+#search-btn:focus {
+    outline: none;
+}
+
+#search-input {
+    height: 40px;
+    width: 300px;
+    font-size: 25px;
+    text-align: center;
+}
+
+h1 {
+    font-family: Brush Script MT;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    font-size: 7em;
+}
+
+h4 {
+
+    font-family: Brush Script MT;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}
+
+#location {
+    display: flex; 
+    flex-direction: row;
+    font-size: 60px;
+    font-family: fantasy;
+    color: #791e33;
+    margin: 0;
+    width: 60%;
+    height: 15%;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+#weather-details-container {
+    width: 80%;
+    height: 60%;  
+}
+
+#weather-details-container > div {
+    width:48%; 
+    height:48%;
+    margin:4px; 
+    float: left;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    font-family: fantasy;
+    color: #9e3a51;
+}
+
+.details > h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid #9e3a51;
+    color: white;
+}
+
+#temperature,
+#humidity,
+#wind,
+#pressure {
+    margin-top: 20px;
+}
+
