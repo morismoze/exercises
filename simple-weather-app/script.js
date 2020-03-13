@@ -13,14 +13,15 @@ window.addEventListener('load', () => {
     }
 
     //search functionality
+    //TODO: alerting when user presses search without even pressing input box
     let search_input = document.querySelector('#search-input');
     let search_btn = document.querySelector('#search-btn');
 
     search_input.addEventListener('input', () => {
         search_btn.addEventListener('click', () => {
             let value = search_input.value.trim();
-            if(value == null) {
-                alert("You must enter a city name!");
+            if(value == null || value == '') {
+                alert("You must enter a valid city name!");
             } else {
                 const api_key = "94d802007552bd114c032598c745399c";
                 const api = "https://api.openweathermap.org/data/2.5/weather?q="+value+"&appid="+api_key;
@@ -37,7 +38,6 @@ function setDataContainer(api) {
     let humidityInfo = document.querySelector('#humidity');
     let windInfo = document.querySelector('#wind');
     let pressureInfo = document.querySelector('#pressure');
-    //TODO: unit(C, F) change -> let unit = document.querySelector('.unit');
     
     parsingToJSON(api).then(data => {
             const country = data.sys.country;

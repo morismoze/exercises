@@ -130,10 +130,5 @@ h4 {
     color: white;
 }
 
-#temperature,
-#humidity,
-#wind,
-#pressure {
-    margin-top: 20px;
-}
+
 
