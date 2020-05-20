@@ -80,6 +80,7 @@ function setDataContainer(api) {
             humidityInfo.textContent = humidity + " %";
             windInfo.textContent = wind + " m/s";
             pressureInfo.textContent = pressure + " hPa";
+            //when data is shown, enable the unit button
             unit.disabled = false;
     });
 }
