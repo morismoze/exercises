@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', cursive;}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    /* currentColor inherits color from the nearest parent */
+    color: currentColor;
+    text-decoration: none;
+}
+
+.navbar {
+    height: 70px;
+    width: 100%;
+    background: black;
+    color: white;
+}
+
+.navbar-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* height: 100%; puts every li item in the middle over y-axis - it fills parent's container */
+    height: 100%;
+}
+
+.navbar-list > li {
+    cursor: pointer;
+}
+
+.navbar-list li:nth-child(3) {
+    position: relative;
+}
+
+header {
+    padding: 1em;
+    background-color: red;
+    margin-bottom: 1em;
+    padding-bottom: 3.5em;
+    text-align: center;
+    /* we can imagine polygon as putting a bunch of points to a element, first number equals to x-axis and 
+    the second one equals to y-axis */
+    /* firefox gives us possibility to play around with this property dragging points around */
+    clip-path: polygon(50% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%, 0% 0%);
+}
+
+/* putting a element on top of other using z-index */
+.dropdown {
+    position: absolute;
+    top: 50px;
+    width: 500px;
+    /* invisible until it is actually focused */
+    display: none;
+    z-index: 2;
+    background: blue;
+    border-top: 2px solid white;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 3rem;
+    margin-top: 2rem;
+    padding: 0.5rem;
+    box-shadow: rgba(2, 8, 20, 0.2) 0px 0.175em 0.5em;
+    /* translate it to the left to make it centered */
+    transform: translateX(26%);
+    /* dropwdown will appear when it is focused so we make transition on opacity */
+    transition: display 0.2s ease-out;
+}
+
