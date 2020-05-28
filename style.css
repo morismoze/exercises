@@ -50,13 +50,15 @@ header {
     clip-path: polygon(50% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%, 0% 0%);
 }
 
-/* putting a element on top of other using z-index */
+/* clickable dropdown menu with just CSS */
 .dropdown {
     position: absolute;
-    top: 50px;
+    top: 20px;
     width: 500px;
     /* invisible until it is actually focused */
-    display: none;
+    opacity: 0;
+    /* setting z-index of a child element to a value greater than z-index of parent element, puts the child
+    element on top*/
     z-index: 2;
     background: blue;
     border-top: 2px solid white;
@@ -70,8 +72,41 @@ header {
     padding: 0.5rem;
     box-shadow: rgba(2, 8, 20, 0.2) 0px 0.175em 0.5em;
     /* translate it to the left to make it centered */
-    transform: translateX(26%);
-    /* dropwdown will appear when it is focused so we make transition on opacity */
+    transform: translateX(-44%);
+    /* dropdown will appear when it is focused so we make transition on opacity property */
     transition: display 0.2s ease-out;
 }
 
+.has-dropdown:focus-within .dropdown {
+    opacity: 1;
+}
+
+.dropdown-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+}
+
+.dropdown-item {
+    /* anchor tag is by default inline element which means that we can't define its width and height so we have to
+    display that element as inline-block */
+    text-align: center;
+    top: 25%;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.dropdown-item a::before {
+    display: inline-block;
+    content: '';
+    border: 2px solid white;
+    border-radius: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+    /* vertical-align: middle; vertically aligns before element to the middle of element connected to it */
+    vertical-align: middle;
+    margin-right: 10px;
+} 
