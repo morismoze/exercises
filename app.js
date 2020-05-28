@@ -8,7 +8,7 @@ const solarBtn = document.getElementById('solar');
 
 const userTheme = localStorage.getItem('theme'); 
 
-if(userTheme !== undefined) {
+if(userTheme) {
     document.body.className = userTheme;
 } else {
     document.body.className = "light";
