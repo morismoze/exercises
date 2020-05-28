@@ -10,6 +10,8 @@ const userTheme = localStorage.getItem('theme');
 
 if(userTheme !== undefined) {
     document.body.className = userTheme;
+} else {
+    document.body.className = "light";
 }
 // Event Listeners
 
