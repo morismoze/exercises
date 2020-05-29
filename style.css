@@ -6,7 +6,7 @@ body {
     background-color: var(--background);
     /* we can transition changing themes with transition property and make background-color change faster than text which
     makes cool offset effect */
-    transition: background-color 0.5s ease-in-out, color 0.8s ease-in-out;
+    transition: background-color 0.5s ease-in, color 1s ease-in;
 }
 
 ul {
@@ -99,6 +99,38 @@ main {
     transform-origin: left;
 }
 
+.has-dropdown {
+    padding: 0.8em;
+    -webkit-animation: blinking-border 1.8s infinite;    
+    animation: blinking-border 1.8s infinite; 
+    border:2px solid black;
+    border-radius: 15px;
+}
+
+/* SIDE NOTE: removing all padding from parent element 'has-dropdown' and put it to anchor tag and also displayed it
+as block element because block elements by defualt take 100% of parent element*/
+
+@keyframes blinking-border {    
+    from {    
+        border-color: orange;    
+    }    
+    20% {    
+        border-color: yellow;
+    }    
+    40% {    
+        border-color: green;
+    }
+    60% {    
+        border-color: cyan;
+    }
+    80% {    
+        border-color: blue;
+    }
+    to {
+        border-color: violet;
+    }
+} 
+
 .dropdown-item {
     position: relative;
     width: 100%;
@@ -113,7 +145,6 @@ main {
 .dropdown-item a::before {
     line-height: 47px;
 }
-
 
 .dropdown-item a::before {
     display: inline-block;
@@ -140,7 +171,6 @@ main {
     --gray6: #12181b;
     --blue: #0084a5;
     --purple: #a82dd1;
-    --yellow: #fff565;
 }
 
 .light {
@@ -149,7 +179,6 @@ main {
     --background-dropdown: var(--gray0);
     --text: var(--gray6);
     --border: var(--blue);
-    --background-solar: var(--yellow);
 }
 
 .dark {
@@ -158,7 +187,6 @@ main {
     --background-dropdown: var(--gray6);
     --text: var(--gray0);
     --border: var(--purple);
-    --background-solar: var(--blue);
 }
 
 .solar {
@@ -176,5 +204,4 @@ main {
     --background-dropdown: var(--gray0);
     --text: var(--gray6);
     --border: var(--blue);
-    --background-solar: var(--yellow);
 }
