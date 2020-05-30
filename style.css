@@ -107,8 +107,8 @@ main {
     border-radius: 15px;
 }
 
-/* SIDE NOTE: removing all padding from parent element 'has-dropdown' and put it to anchor tag and also displayed it
-as block element because block elements by defualt take 100% of parent element*/
+/* SIDE NOTE: removing all padding from parent element 'has-dropdown' and put it to anchor tag (child element) and also displayed it
+as block element because block elements by defualt take 100% of parent element */
 
 @keyframes blinking-border {    
     from {    
@@ -204,4 +204,17 @@ as block element because block elements by defualt take 100% of parent element*/
     --background-dropdown: var(--gray0);
     --text: var(--gray6);
     --border: var(--blue);
+}
+
+@media (max-width: 740px) {
+    .dropdown {
+        display: block;
+        width: 150px;
+        height: inherit;
+        transform: translateX(-35%);
+    }
+
+    .dropdown-item a::before {
+        display: none;
+    }
 }
