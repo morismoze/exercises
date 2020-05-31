@@ -103,7 +103,7 @@ main {
     padding: 0.8em;
     -webkit-animation: blinking-border 1.8s infinite;    
     animation: blinking-border 1.8s infinite; 
-    border:2px solid black;
+    border:2px solid orange;
     border-radius: 15px;
 }
 
